@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remember - My Country: The New Age OST</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            width: 100%;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.02);
+        }
+
+        .play-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .play-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .play-button:active {
+            transform: translateY(0);
+        }
+
+        .play-icon {
+            width: 0;
+            height: 0;
+            border-left: 12px solid white;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            margin-left: 3px;
+        }
+
+        .credits {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .credits h2 {
+            font-size: 22px;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .credit-item {
+            margin-bottom: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+            color: #333;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .credit-item:last-child {
+            border-bottom: none;
+        }
+
+        .credit-label {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .header .subtitle {
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>U-mb5, SEAGATE DJ - Remember</h1>
+            <div class="subtitle">Feat. 서호<br>My Country: The New Age OST</div>
+        </div>
+
+        <div class="content">
+            <div class="image-container">
+                <img src="https://cdn.i-scmp.com/sites/default/files/styles/1200x800/public/d8/images/methode/2019/10/25/999b17da-f6d3-11e9-87ad-fce8e65242a6_image_hires_122747.JPG?itok=l_wNOljB&v=1571977675"
+                    alt="My Country: The New Age">
+            </div>
+
+            <center>
+                <a href="https://youtu.be/ZEBiM2DvIvg?si=vOePb5zxtGeNG8RI" class="play-button" target="_blank">
+                    <div class="play-icon"></div>
+                    Play on YouTube
+                </a>
+            </center>
+
+            <div class="credits">
+                <h2>Credits</h2>
+                <div class="credit-item">
+                    <span class="credit-label">Lyrics by:</span> SEAGATE DJ, BLUEOCEAN
+                </div>
+                <div class="credit-item">
+                    <span class="credit-label">Composed by:</span> 최철호, SEAGATE DJ, BLUEOCEAN, 회장님
+                </div>
+                <div class="credit-item">
+                    <span class="credit-label">Arranged by:</span> SEAGATE DJ, BLUEOCEAN, 회장님
+                </div>
+                <div class="credit-item">
+                    <span class="credit-label">Directed by:</span> 최철호
+                </div>
+                <div class="credit-item">
+                    <span class="credit-label">Chorus:</span> 서호
+                </div>
+                <div class="credit-item">
+                    <span class="credit-label">Midi Programming by:</span> SEAGATE DJ, BLUEOCEAN, 회장님
+                </div>
+                <div class="credit-item">
+                    <span class="credit-label">Vocal directed by:</span> SEAGATE DJ, 회장님
+                </div>
+                <div class="credit-item">
+                    <span class="credit-label">Recorded by:</span> 서인석 @Drama music one
+                </div>
+                <div class="credit-item">
+                    <span class="credit-label">Mixed by:</span> SEAGATE DJ @BLUEOCEAN
+                </div>
+                <div class="credit-item">
+                    <span class="credit-label">Mastered by:</span> 서인석 @Drama music one
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
