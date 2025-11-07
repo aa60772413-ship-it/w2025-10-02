@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* 未點擊*/
+        a:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        /* 拜訪過 */
+        a:visited {
+            color: pink;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        /* 移到上面 只有這個最常使用*/
+        a:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        /* 點擊下去 */
+        a:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+        }
+
+        .box:hover{
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Link Colors</h2>
+
+    <p>You can change the default colors of links</p>
+
+    <a href="html_images.asp" target="_blank">HTML Images</a>
+
+    <div class="box">
+
+    </div>
+
+</body>
+
+</html>

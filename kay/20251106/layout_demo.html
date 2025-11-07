@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox 與 Grid 核心概念示範</title>
+    <style>
+        /* 全域基礎設定 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            color: #2c3e50;
+        }
+
+        /* -------------------------- */
+        /* Flexbox 示範區 */
+        /* -------------------------- */
+
+        /* 1. 水平垂直置中示範 */
+        .flex-center-container {
+            display: flex; /* 啟用 Flex 佈局 */
+            height: 200px;
+            background-color: #ecf0f1;
+            border: 3px dashed #3498db;
+            margin-bottom: 20px;
+            
+            /* 核心：Flexbox 水平垂直置中 */
+            justify-content: center; /* 主軸 (水平) 置中 */
+            align-items: center;     /* 交叉軸 (垂直) 置中 */
+        }
+
+        .centered-box {
+            padding: 20px 40px;
+            background-color: #f1c40f;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* 2. 導航列彈性分配示範 */
+        .flex-navbar {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #2c3e50;
+        }
+
+        .flex-nav-item {
+            /* 核心：Flex Item 屬性 */
+            flex-grow: 1; /* 讓每個項目平均分配所有剩餘的空間 */
+            text-align: center;
+            padding: 15px 0;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-right: 1px solid #34495e;
+        }
+        
+        .flex-nav-item:last-child {
+            border-right: none;
+        }
+
+        .flex-nav-item:hover {
+            background-color: #34495e;
+        }
+
+
+        /* -------------------------- */
+        /* Grid 示範區 */
+        /* -------------------------- */
+        
+        /* 3. 網站結構佈局示範 */
+        .grid-layout {
+            display: grid; /* 啟用 Grid 佈局 */
+            min-height: 50vh; /* 最小高度，確保能看到佈局效果 */
+            gap: 10px; /* 網格單元格間距 */
+            border: 3px solid #e74c3c;
+            
+            /* 核心：定義二維結構 */
+            /* 200px (Sidebar) + 1fr (Main Content) */
+            grid-template-columns: 200px 1fr; 
+            
+            /* auto (Header) + 1fr (Content) + auto (Footer) */
+            grid-template-rows: auto 1fr auto; 
+            
+            /* 核心：使用名稱定義佈局區域 */
+            grid-template-areas:
+                "header header"  /* 第一行：Header 橫跨兩列 */
+                "sidebar main"   /* 第二行：左邊是 Sidebar，右邊是 Main */
+                "footer footer"; /* 第三行：Footer 橫跨兩列 */
+        }
+
+        /* 項目定位與樣式 */
+        .grid-layout > * {
+            padding: 15px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center; /* 讓內部文字垂直置中 (這裡使用了 Flexbox 技巧) */
+        }
+        
+        .header { 
+            grid-area: header; 
+            background-color: #c0392b; 
+        }
+        
+        .sidebar { 
+            grid-area: sidebar; 
+            background-color: #34495e; 
+            flex-direction: column; /* 垂直排列選單項目 */
+            align-items: flex-start;
+        }
+
+        .sidebar-item {
+            padding: 5px 0;
+            cursor: pointer;
+        }
+
+        .sidebar-item:hover {
+            text-decoration: underline;
+        }
+        
+        .main { 
+            grid-area: main; 
+            background-color: #ecf0f1; 
+            color: #333;
+            font-weight: normal;
+        }
+        
+        .footer { 
+            grid-area: footer; 
+            background-color: #c0392b; 
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS 排版核心概念：Flexbox 與 Grid 示範</h1>
+
+    <h2>Flexbox 示範：一維排列與置中</h2>
+    <h3>1. 水平垂直置中 (Flexbox 經典應用)</h3>
+    <p>透過 <code>display: flex;</code> 搭配 <code>justify-content: center;</code> 和 <code>align-items: center;</code> 實現。</p>
+    <div class="flex-center-container">
+        <div class="centered-box">
+            ✅ 完美置中
+        </div>
+    </div>
+
+    <h3>2. 導航列彈性分配 (Flexbox 空間控制)</h3>
+    <p>透過 <code>flex-grow: 1;</code> 讓所有項目平均佔據空間。</p>
+    <ul class="flex-navbar">
+        <li class="flex-nav-item">首頁</li>
+        <li class="flex-nav-item">產品介紹</li>
+        <li class="flex-nav-item">服務項目</li>
+        <li class="flex-nav-item">關於我們</li>
+    </ul>
+
+    <h2>Grid 示範：二維結構與版面規劃</h2>
+    <h3>3. 網站標準佈局 (Grid Area 應用)</h3>
+    <p>使用 <code>grid-template-areas</code> 規劃版面，同時控制行與列。</p>
+    <div class="grid-layout">
+        <div class="header">頁首 (Header) - 橫跨兩列</div>
+        <div class="sidebar">
+            側邊欄 (Sidebar) - 固定寬度
+            <div class="sidebar-item">選單 A</div>
+            <div class="sidebar-item">選單 B</div>
+            <div class="sidebar-item">選單 C</div>
+        </div>
+        <div class="main">
+            主內容區 (Main Content) - 佔滿剩餘空間
+            <p>這是主要的內容區域，高度由 <code>grid-template-rows: 1fr;</code> 決定，確保它佔據中間所有的垂直空間。</p>
+        </div>
+        <div class="footer">頁尾 (Footer) - 橫跨兩列</div>
+    </div>
+
+</body>
+</html>

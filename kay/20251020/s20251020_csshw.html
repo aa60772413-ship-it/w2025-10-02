@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 兄弟姊妹 少用 */
+        .a2~div {
+            color: rgb(255, 200, 0);
+        }
+
+        /* 子孫 常用 */
+        .a1>p {
+            color: lightpink;
+        }
+
+        .a2>p {
+            color: lightblue;
+        }
+
+        .a3>p {
+            color: rgb(146, 200, 138);
+        }
+
+        /* .a3~div {
+            color: lightblue;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="a1">
+        劉備
+        <P>
+            &nbsp;&nbsp;&nbsp;&nbsp;劉封
+        </P>
+        <P>
+            &nbsp;&nbsp;&nbsp;&nbsp;劉禪
+        </P>
+    </div>
+
+    <div class="a2">
+        關羽
+        <P>
+            &nbsp;&nbsp;&nbsp;&nbsp;關公
+        </P>
+        <P>
+            &nbsp;&nbsp;&nbsp;&nbsp;關門
+        </P>
+    </div>
+
+    <div class="a3">
+        張飛
+        <P>
+            &nbsp;&nbsp;&nbsp;&nbsp;蟑螂
+        </P>
+        <P>
+            &nbsp;&nbsp;&nbsp;&nbsp;張三
+        </P>
+    </div>
+</body>
+
+</html>

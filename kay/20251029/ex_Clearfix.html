@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Float 塌陷與 Clearfix 修正範例</title>
+<style>
+.clearfix {
+    clear: both; /* 清除左右浮動 */
+}
+ .container {
+    border: 5px solid gray;
+    background-color: #eee;
+    width: 50%;
+    padding: 5px;
+  }
+  .box {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 5px;
+  }
+
+  .red  { background: tomato; }
+  .blue { background: skyblue; }
+
+  /* ✅ Clearfix 修正 */
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>
+</head>
+<body>
+  <h2>🚫 沒加 clearfix（塌陷範例）</h2>
+  <div class="container">
+    <div class="box red"></div>
+    <div class="box blue"></div>
+  </div>
+  <p>這段文字會貼在色塊旁邊，因為父容器的高度塌陷。</p>
+  <hr>
+  <h2>✅ 加上 clearfix（修正後）</h2>
+  <div class="container clearfix">
+    <div class="box red"></div>
+    <div class="box blue"></div>
+  </div>
+  <p>現在父容器恢復正常高度，灰色區塊包住了浮動的子元素。</p>
+  <hr>
+    <h2> clearfix（修正後）</h2>
+  <div class="container clearfix">
+    <div class="box red"></div>
+    <div class="box blue"></div>
+</body>
+</html>

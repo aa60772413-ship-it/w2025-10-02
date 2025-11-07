@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* menu */
+        .container-menu {
+            float: left;
+            width: 20%;
+            height: 100vh;
+            background-color: #cb822e;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.6);
+
+        }
+
+        .container-menu>a {
+            /* display: inline-block; */
+            display: block;
+            width: 100%;
+            height: 80px;
+           color: black;
+            margin: auto;
+            margin-top: 10%;
+            text-align: center;
+            padding-top: 40px;
+            box-sizing: border-box;
+            text-decoration: none;
+              font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .container-menu>a:hover {
+            background-color: #61401e;
+            color: bisque;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* main */
+        .container-main {
+            float: left;
+            width: 80%;
+            height: 100vh;
+            background-color: #faebb9;
+        }
+
+
+
+        /* .container-ad {
+            float: left;
+            width: 20%;
+            height: 100vh;
+            background-color: lightyellow;
+        } */
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+        img{
+            width: 200px;
+            margin-left: 55px;
+            margin-top: 55px;
+        }
+        footer {
+            text-align: center;
+            line-height: 60px;
+            color: rgb(0, 0, 0);
+            font-size: 1.1rem;
+            box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }  
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container-menu">
+        <a href="./web/page.html" target="myIframe">首頁</a>
+        <a href="./web/pageA.html" target="myIframe">關於我們</a>
+        <a href="./web/pageB.html" target="myIframe">服務</a>
+        <a href="./web/pageC.html" target="myIframe">聯絡我們</a>
+        <img src="./web/PR2.png">
+
+    </div>
+    <div class="container-main">
+        <iframe name="myIframe" src="./web/page.html" frameborder="0"></iframe>
+         
+    </div>
+   
+    </div>
+   <footer>© 2025 My Company. All rights reserved.</footer>
+</body>
+
+</html>

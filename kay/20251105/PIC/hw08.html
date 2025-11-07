@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動介紹頁面</title>
+    <style>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        /* 保持原樣 */
+        background-image: url(./未命名-2.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: '微軟正黑體', 'Arial', sans-serif; /* 💡 增加中文字體 */
+        color: #333; /* 預設文字顏色 */
+    }
+
+    /* ----------- 頂部導覽列 ------------ */
+    .top {
+        position: sticky;
+        top: 0;
+        margin: auto;
+        width: 80%;
+        height: 10vh;
+        background-color: rgba(255, 255, 255, 0.9); /* 💡 稍微透明的白色，更有質感 */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 💡 更柔和的陰影 */
+       
+        border-radius: 8px 8px 0 0; /* 配合 container 的圓角 */
+        z-index: 10; /* 確保導覽列在最上層 */
+    }
+
+    .topbox1,
+    .topbox2,
+    .topbox3 {
+        height: 100%;
+        width: 33.33%;
+        position: absolute;
+        background-color: transparent; 
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.1rem; /* 略微縮小字體 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s; /* 💡 增加 hover 過渡效果 */
+    }
+
+    .topbox1:hover,
+    .topbox2:hover,
+    .topbox3:hover {
+        background-color: #e6f7ff; /* 💡 hover 時的淡藍色背景 */
+    }
+
+    .topbox1 {
+        left: 0;
+    }
+
+    .topbox2 {
+        left: 33.33%;
+    }
+
+    .topbox3 {
+        right: 0;
+    }
+
+    /* 超連結樣式 */
+    .top a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: 10vh;
+    }
+
+    .top a:hover {
+        color: #007bff; /* 💡 hover 時的藍色 */
+        text-decoration: none;
+    }
+
+    /* ----------- 內容區域 ------------ */
+    .container {
+        width: 80%;
+        /* height: 105vh; 💡 拿掉固定高度，讓內容撐開 */
+        min-height: 80vh; /* 設定最小高度 */
+        margin: 30px auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 💡 讓區塊看起來是浮起的 */
+        padding: 20px; /* 增加整體內邊距 */
+    }
+
+    .container1 {
+        background-color: lightpink;
+        background-image: url(./未命名-1.jpg);
+        background-size: cover;
+        background-position: center;
+        /* height: 40vh; 調整首圖高度 */
+    }
+
+.container11 {
+    background-color: #ffffff;
+    font-size: 0; 
+
+    padding-left: 150px;
+    margin: auto;
+}
+
+    /* 處理 inline-block 間距 */
+    .container11::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 0;
+        visibility: hidden;
+    }
+
+
+    /* 路線地圖區塊 */
+    .container2 {
+        background-color: #f8f9fa; /* 💡 淺灰色背景 */
+        /* 💡 移除 .container2 的 padding，讓地圖貼滿邊緣 */
+        padding: 0; 
+        display: flex; /* 使用 Flexbox 進行排版 */
+        flex-direction: column;
+    }
+
+    .map-header {
+        padding: 20px;
+        text-align: center;
+        background-color: #ffffff;
+    }
+    
+    .map-header h1 {
+        color: #007bff;
+        margin-bottom: 10px;
+        font-size: 2rem;
+    }
+    
+    .map-header p {
+        color: #6c757d;
+        font-size: 1.1rem;
+    }
+
+    /* 地圖 iframe 樣式 */
+    .google-map-iframe {
+        width: 100%;
+        /* 地圖佔據容器的大部分空間 */
+        height: 50vh; 
+        border: none;
+        display: block;
+    }
+    
+    .map-info {
+        padding: 20px;
+        background-color: #ffffff;
+    }
+    
+    .map-info h1 {
+        font-size: 1.8rem;
+        color: #333;
+        border-left: 5px solid #007bff; /* 💡 增加標題線條 */
+        padding-left: 10px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .map-info p {
+        font-size: 1.1rem; /* 統一字體大小 */
+        line-height: 1.8;
+        margin-bottom: 10px;
+        padding-left: 15px;
+    }
+
+
+    .container3 {
+        background-color: #343a40; /* 💡 深色背景 */
+        color: white;
+    }
+
+    /* 回頂部按鈕 (樣式微調) */
+    .upbox {
+        width: 200px; /* 略微縮小 */
+        height: 80px;
+        right: 30px;
+        bottom: 30px;
+        background-color: #007bff; /* 💡 醒目的主題藍色 */
+        line-height: 80px;
+        font-weight: bold;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: background-color 0.3s;
+    }
+
+    .upbox a {
+        color: white; /* 💡 連結文字為白色 */
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .upbox:hover {
+        background-color: #0056b3; /* 💡 hover 時顏色變深 */
+        cursor: pointer;
+    }
+
+    /* 內容區塊樣式 (使用 inline-block) */
+    .mbox {
+        width: 45%;
+        height: 50vh;
+        background-color: #f1f1f1; /* 💡 淺灰底色 */
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 20px;
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .mbox2 {
+        width: 45%;
+        height: 45vh;
+        background-color: #e9ecef; /* 💡 略深的淺灰底色 */
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 20px;
+        padding: 30px 20px; /* 增加內邊距 */
+        text-align: center;
+    }
+
+    .mbox2 h1 {
+        font-size: 1.8rem; /* 略微縮小 */
+        margin-bottom: 15px;
+        color: #007bff; /* 💡 標題顏色 */
+    }
+
+    .mbox2 p {
+        font-size: 1rem; /* 統一字體大小，提高可讀性 */
+        line-height: 1.7; /* 增加行距 */
+        color: #6c757d;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    /* 圖片樣式 */
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+</style>
+    </style>
+</head>
+
+<body id="top">
+
+    <div class="container container1"></div>
+
+    <div class="top">
+        <div class="topbox1">
+            <a href="#atv">活動說明</a>
+        </div>
+        <div class="topbox2">
+            <a href="#map">路線地圖</a>
+        </div>
+        <div class="topbox3">
+            <a href="#meu">菜單介紹</a>
+        </div>
+    </div>
+
+    <div class="container container11" id="atv">
+        <div class="mbox">
+            <img src="./螢幕擷取畫面 2025-11-05 150801.png">
+        </div><div class="mbox2">
+            <h1>微景森林</h1>
+            <p>在水之庭園裡創造出屬於自己的微型森林，享受微風與鳥鳴，親手創造獨一無二的微景生態，在自然的環境中療癒心靈，把虹夕諾雅 谷關的自然回憶直接帶回家。</p>
+        </div>
+
+        <div class="mbox">
+            <img src="./螢幕擷取畫面 2025-11-05 150833.png">
+        </div><div class="mbox2">
+            <h1>啡日常・靜萃時光</h1>
+            <p>在戲水池畔體驗手沖茶咖啡，享受茶香與咖啡香的同時，感受沁涼的水之特等席，沉浸在綠蔭環繞的水之庭園，創造非日常的悠然時光。</p>
+        </div>
+    </div>
+
+    <div class="container container2" id="map">
+        <div class="map-header">
+            <h1>📍 路線地圖與交通指南</h1>
+            <p>台灣台中市和平區博愛里東關路一段溫泉巷16號</p>
+        </div>
+        
+        <iframe class="google-map-iframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.0400749421915!2d121.0104902!3d24.205375999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468e5f6a496f2b7%3A0x7a52f8e984d586a5!2z6Jm55aSV6K-66ZuFIOiwt-WFsw!5e0!3m2!1szh-CN!2stw!4v1762328531014!5m2!1szh-CN!2stw"
+            style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        
+        <div class="map-info">
+            <h1>交通方式</h1>
+            <p>
+                **搭乘高鐵**<br>
+                台北高鐵站/高雄左營高鐵站 → 台灣高鐵 (約1小時) → 台中高鐵站 → 接駁車 (約1個半小時) → 抵達虹夕諾雅 谷關。
+            </p>
+            <p>
+                **自行開車**<br>
+                台北市內/高雄市內 → 國道1號 → 台中 → 國道4號 → 豐原端出口 → 台3線接台8線 → 抵達虹夕諾雅 谷關。
+            </p>
+            <p>
+                **接駁服務**<br>
+                提供自桃園國際機場、台北松山機場、臺中高鐵站、和臺中國際機場前往虹夕諾雅 谷關之接駁服務。
+            </p>
+        </div>
+
+    </div>
+    
+    <div class="container container3" id="meu">
+        <h1 style="text-align: center; padding-top: 50px; font-size: 2.5rem;">🍽️ 菜單介紹</h1>
+        <img src="./GreedyBeagle-1-e1588228197479.jpg">
+        <img src="./GreedyBeagle-2-e1588228214416.jpg">
+        <img src="./Health-1-e1588220018659.jpg">
+        <img src="./d1.jpg">
+        <img src="./IMG_9657.jpg">
+        <img src="./Rice-1-e1588216426439.jpg">
+    </div>
+
+    <div class="upbox">
+        <a href="#top">TOP</a>
+    </div>
+
+</body>
+
+</html>
+
+</html>

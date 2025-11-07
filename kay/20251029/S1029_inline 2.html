@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>左邊</title>
+    <style>
+        body {
+            background-color: #faebb9;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #cb822e;
+            color: white;
+            height: 150vh;
+            display: inline-block;
+            font-weight: bold;
+            /* 🔹文字變粗體 */
+            text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.6);
+            font-size: 30px;
+        }
+
+        .sidebar img {
+            width: 85%;
+            /* 照片不要太寬 */
+            height: 120px;
+            border-radius: 20px;
+            margin: 20px auto;
+            /* 上下留白並置中 */
+            display: block;
+            /* 讓 margin auto 生效 */
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sidebar img:hover {
+            transform: scale(1.05);
+            /* 滑過放大效果 */
+            box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .sidebar a {
+            display: block;
+            color: rgb(0, 0, 0);
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background-color: #969696;
+        }
+
+        /* 右 */
+        .box {
+            width: calc(100% - 300px);
+            vertical-align: top;
+            padding: 20px;
+            background-color: #faebb9;
+            height: 120vh;
+            display: inline-block;
+
+        }
+
+        .box2 {
+            width: 100%;
+            vertical-align: top;
+            padding: 20px;
+            background-color: #ffe37d;
+            display: inline-block;
+            /* text-align: center; */
+
+        }
+
+
+        img {
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 40px;
+            width: 1100px;
+            margin-bottom : 30px;
+            height: 45vh;
+        }
+
+        .top-btn {
+            position: fixed;
+            /* 🔹固定在視窗，不會隨內容捲動 */
+            bottom: 30px;
+            /* 距離視窗底部 30px */
+            left: 50%;
+            /* 水平置中 */
+            background-color: #cb822e;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            padding: 15px 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4); 
+            margin-left: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <a href="#home">首頁</a>
+        <a href="#about">關於我們</a>
+        <a href="#services">服務</a>
+        <a href="#contact">聯絡我們</a>
+        <img src="./photo/PR1.jpg">
+        <img src="./photo/PR2.png">
+        <img src="./photo/PR3.webp">
+    </div>
+    <div class="box">
+        <div>
+            <img src="./photo/05.webp">
+            <img src="./photo/06.webp">
+            <img src="./photo/07.webp">
+        </div>
+    </div>
+    <hr>
+    <div class="box2">
+        <div id="about">
+            <h1>關於我們</h1>
+            <p>我們是一家專業的 禮品客製化公司，致力於為企業與個人打造專屬的創意禮品。
+                從品牌形象設計、企業贈品、活動紀念品，到節慶禮盒與個人化商品，我們提供 一站式客製服務，
+                讓每一份禮品都能展現您的獨特風格與用心。
+                我們深信「禮品不只是物品，更是一份心意的延伸」。</p>
+            <p>因此在每一次的設計與製作中，我們都堅持：</p>
+            <ul>
+                <li>精緻的工藝品質</li>
+                <li>專業的設計規劃</li>
+                <li>快速且彈性的客製流程</li>
+            </ul>
+            <p>不論您是企業品牌推廣、活動贈禮、員工福利，
+                還是想為親友打造獨一無二的紀念品，
+                我們都能提供最合適的解決方案，
+                讓您的每份禮品都成為 值得珍藏的故事與回憶。</p>
+        </div>
+        <div id="services">
+            <h1>服務項目</h1>
+
+            <h3> 一、企業客製化禮贈品</h3>
+            我們專注於企業形象與品牌禮品設計，提供多樣化的客製方案，
+            從構思、設計、打樣到成品出貨，全程一站式服務。
+            無論是開幕活動、周年慶、員工福利或客戶贈禮，我們都能為您打造獨一無二的企業禮品。
+            <p>服務內容：</p>
+            <ul>
+                <li> 企業形象禮品、商務贈禮</li>
+                <li> 年終禮盒、節慶禮品（春節／中秋）</li>
+                <li> 員工獎勵品、客戶關懷禮</li>
+                <li> 貴賓專屬禮盒設計</li>
+            </ul>
+            <h3> 二、客製化商品與包裝設</h3>計
+            結合創意與實用性，打造符合品牌調性的專屬商品。
+            提供多樣印刷與加工方式，如雷雕、絲印、燙金、壓印等，讓禮品更具質感與識別度。
+            <p> 服務內容：</p>
+            <ul>
+                <li> LOGO / 圖案印製
+                <li> 專屬禮盒與包裝設計</li>
+                <li> 客製開模與多材質製作（塑膠、金屬、布料、竹木等）</li>
+                <li> 小量快速客製或大量代工（OEM / ODM）</li>
+            </ul>
+            <h3> 三、節慶與活動禮品規劃</h3>
+            每個節慶都是品牌傳達心意的好時機。
+            我們提供完整的節慶與活動禮品整合方案，讓企業在重要時刻送出最貼心的祝福。
+            <p> 服務內容：</p>
+            <ul>
+                <li> 春節、中秋、聖誕等節慶禮盒</li>
+                <li> 年會、尾牙、開幕活動禮品</li>
+                <li> 展覽、會議、比賽紀念品</li>
+                <li> 婚禮、校園活動客製禮品</li>
+            </ul>
+            <h3> 四、品牌整合與行銷支援</h3>
+            不只是製作禮品，更協助品牌創造價值。
+            我們提供品牌延伸商品開發與整合行銷建議，
+            讓您的禮品不只是贈品，更是品牌故事的延伸。
+            <p>服務內容：</p>
+            <ul>
+                <li> 品牌聯名與形象商品設計</li>
+                <li> 禮品型錄與行銷文案規劃</li>
+                <li> ESG 永續環保商品開發</li>
+            </ul>
+            <h3> 五、物流與倉儲配送服務</h3>
+            提供完善的物流與配送支援，讓您無需煩惱後續出貨問題。
+            無論是全台配送、客製包裝寄送，或長期倉儲代管，我們都能靈活支援。
+            <p> 服務內容：</p>
+            <ul>
+                <li> 禮品打包與倉儲管理</li>
+                <li> 多地點客戶配送</li>
+                <li> 快速出貨與宅配服務</li>
+            </ul>
+            <p> 🌟 我們的承諾
+                我們堅持以「創意、品質、服務」為核心，
+                以專業經驗與用心態度，為每位客戶打造最合適的禮品方案，
+                讓每一份禮物都成為傳遞品牌價值與情感的橋樑。</p>
+        </div>
+        <div id="contact">
+            <h1>聯絡我們</h1>
+            <table style="width: 100%; border-spacing: 20px;">
+                <tr>
+                    <td style="width: 50%; vertical-align: top;">
+                        <form>
+                            <label for="fname"><strong>姓名：</strong></label><br>
+                            <input type="text" id="fname" name="fname"
+                                style="width: 90%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
+
+                            <label for="lname"><strong>電話：</strong></label><br>
+                            <input type="text" id="lname" name="lname"
+                                style="width: 90%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
+
+                            <label for="mail"><strong>Email：</strong></label><br>
+                            <input type="email" id="mail" name="mail"
+                                style="width: 90%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
+
+                            <label for="msg"><strong>留言內容：</strong></label><br>
+                            <textarea id="msg" name="msg" rows="5"
+                                style="width: 90%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;"></textarea><br><br>
+
+                            <button type="submit"
+                                style="padding: 10px 20px; background-color: #cb822e; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">送出</button>
+                        </form>
+                    </td>
+
+                    <td style="width: 50%; vertical-align: top; line-height: 1.8; font-size: 18px;">
+                        <strong>服務時間：</strong> 周一至周五 9:00 - 18:00<br>
+                        <strong>電話：</strong> (02) 8800-0000<br>
+                        <strong>Email：</strong> 888@12345.com<br>
+                        <strong>LINE@：</strong> @123245<br><br>
+                        <strong>公司地址：</strong> 台北市信義區松仁路 123 號 10 樓<br>
+                        <strong>社群平台：</strong><br>
+                        <a></a>
+                        <a href="https://www.facebook.com/">Facebook</a>｜
+                        <a href="https://www.instagram.com/">Instagram</a>｜
+                        <a href="https://www.line.me/tw/">LINE </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+    </div>
+    <a href="#" class="top-btn">▲ TOP</a>
+</body>
+
+</html>
